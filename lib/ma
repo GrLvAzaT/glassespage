@@ -1,0 +1,220 @@
+import 'package:flutter/material.dart';
+import 'package:glassmorphism/glassmorphism.dart';
+import 'package:glasses/src/Header.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'TalkWork',
+      home: GlassmorphicSample(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class GlassmorphicSample extends StatefulWidget {
+  @override
+  State<GlassmorphicSample> createState() => GlassmorphicSampleState();
+}
+
+class GlassmorphicSampleState extends State<GlassmorphicSample> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Container(
+      height: MediaQuery.of(context).size.height,
+      width: double.infinity,
+      decoration: BoxDecoration(
+          color: Color.fromARGB(255, 58, 30, 30),
+          image: DecorationImage(
+            image: AssetImage(
+              "images/goldback2.png",
+            ),
+            fit: BoxFit.cover,
+          )),
+      child: Column(
+        children: [
+          Stack(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Header(),
+                  Container(
+                    child: Center(
+                      //container
+                      child: GlassmorphicContainer(
+                        width: 150,
+                        height: 150,
+                        // margin: EdgeInsets.symmetric(
+                        //   horizontal: 400.0,
+                        //   vertical: 400.0,
+                        // ),
+                        borderRadius: 150,
+                        blur: 10,
+                        alignment: Alignment(4.2, 4.6),
+                        border: 0,
+                        linearGradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color.fromARGB(255, 60, 255, 0).withOpacity(0.3),
+                              Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
+                            ],
+                            stops: [
+                              0.1,
+                              1,
+                            ]),
+                        borderGradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color(0xFFffffff).withOpacity(0.5),
+                            Color((0xFFFFFFFF)).withOpacity(0.5),
+                          ],
+                        ),
+                        child: Row(children: [
+                          Container(
+                            width: 150,
+                            child: Column(children: []),
+                          ),
+                        ]),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: Center(
+                      //container
+                      child: GlassmorphicContainer(
+                        width: 150,
+                        height: 150,
+                        // margin: EdgeInsets.symmetric(
+                        //   horizontal: 400.0,
+                        //   vertical: 400.0,
+                        // ),
+                        borderRadius: 150,
+                        blur: 10,
+                        alignment: Alignment(4.2, 4.6),
+                        border: 0,
+                        linearGradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color.fromARGB(255, 60, 255, 0).withOpacity(0.3),
+                              Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
+                            ],
+                            stops: [
+                              0.1,
+                              1,
+                            ]),
+                        borderGradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color(0xFFffffff).withOpacity(0.5),
+                            Color((0xFFFFFFFF)).withOpacity(0.5),
+                          ],
+                        ),
+                        child: Row(children: [
+                          Container(
+                            width: 150,
+                            child: Column(children: []),
+                          ),
+                        ]),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    ));
+  }
+}
+
+// class ChatCard extends StatelessWidget {
+//   const ChatCard({
+//     Key? key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       margin: EdgeInsets.only(bottom: 2.0),
+//       color: Colors.white.withOpacity(0.2),
+//       padding: EdgeInsets.symmetric(
+//         horizontal: 16.0,
+//         vertical: 8.0,
+//       ),
+//       child: Row(
+//         children: [
+//           CircleAvatar(
+//             radius: 20,
+//             backgroundImage: NetworkImage(
+//                 "https://sun9-48.userapi.com/impg/i2NVCMxKKeY_7JfgwffNnLDHgfoKxCNl7Kwy2A/-lPNJpqr7n0.jpg?size=225x225&quality=96&sign=1680f25f20d11c8cbff4225c330f0530&type=album"),
+//           ),
+//           SizedBox(
+//             width: 16.0,
+//           ),
+//           Expanded(
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   "Aleksey",
+//                   style: TextStyle(
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.black.withOpacity(0.9),
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 4.0,
+//                 ),
+//                 Text(
+//                   "СПасибо))",
+//                   overflow: TextOverflow.ellipsis,
+//                 )
+//               ],
+//             ),
+//           ),
+//           //tytytyyyy
+//           Column(
+//             crossAxisAlignment: CrossAxisAlignment.end,
+//             children: [
+//               Text(
+//                 "11.06pm",
+//                 style: TextStyle(
+//                     fontWeight: FontWeight.bold,
+//                     fontSize: 10.0,
+//                     color: Colors.black.withOpacity(0.9)),
+//               ),
+//               SizedBox(
+//                 height: 4.0,
+//               ),
+//               CircleAvatar(
+//                 radius: 10.0,
+//                 backgroundColor: Colors.green,
+//                 child: Text(
+//                   "1",
+//                   style: TextStyle(
+//                       color: Colors.white,
+//                       fontWeight: FontWeight.bold,
+//                       fontSize: 10.0),
+//                 ),
+//               )
+//             ],
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }
